@@ -6,6 +6,7 @@ development:
   pool: 5
   username: postgres
   password: MyPassword
+  
 
 test:
   adapter: postgresql
