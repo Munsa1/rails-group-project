@@ -1,0 +1,27 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: MyDatabase_development
+  host: localhost
+  pool: 5
+  username: postgres
+  password: MyPassword
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: MyDatabase_test
+  host: localhost
+  pool: 5
+  username: postgres
+  password: MyPassword
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: MyDatabase_Production
+  host: localhost
+  pool: 5
+  username: postgres
+  password: <%= ENV['MyDatabase_Password'] %>
+  role: MyRole
