@@ -10,10 +10,8 @@ AllCops:
 
   DisplayCopNames: true
 
-Layout/EndOfLine:
-   Enabled: False
 Layout/LineLength:
-  Max: 200
+  Max: 120
 Metrics/MethodLength:
   Include:
     - "app/controllers/*"
@@ -60,6 +58,3 @@ Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
   Enabled: false
-© 2022 GitHub, Inc.
-Terms
-Privacy
