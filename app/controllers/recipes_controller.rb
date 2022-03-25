@@ -13,10 +13,10 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.new(Name:params[:name],preperationtime:params[:preperationtime],cookingtime:params[:cookingtime],description:params[:description],public:params[:public],user_id:current_user.id)
+    @recipe = Recipe.new(recipe_params)
     @recipe.user_id = current_user.id
     if @recipe.save
-      flash[:notice] = 'Recipe successfully created'
+      flash[:notice] = 'recipe succesfully created'
       redirect_to @recipe
     else
       flash[:notice] = 'Something went wrong'
@@ -29,5 +29,8 @@ class RecipesController < ApplicationController
     @recipe.destroy
     flash[:notice] = 'The recipe was successfully destroyed.'
     redirect_to recipes_url
+  end
+  def recipe_params
+    params.require(:recipe).permit(:Name, :cookingtime, :preperationtime, :description, :public)
   end
 end

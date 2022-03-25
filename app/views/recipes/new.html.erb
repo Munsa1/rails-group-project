@@ -5,9 +5,9 @@
   <h1>New Recipe</h1>
 
 
-  <%= form_with url: recipes_path do |form| %>
+  <%= form_with model: @recipe, url: recipes_path do |form| %>
 <div class="comment-contain">
-	<%= form.text_field :name, placeholder: 'Name', class: 'form-inp'%>
+	<%= form.text_field :Name, placeholder: 'Name', class: 'form-inp'%>
   <%= form.number_field :cookingtime, placeholder: 'how many seconds to cook', class: 'form-inp', min: '0' %>
   <%= form.number_field :preperationtime, placeholder: 'Phow many seconds to prepare', class: 'form-inp', min:'0'%>
   <%= form.text_area :description, placeholder: 'Description', class: 'form-inp' %>
