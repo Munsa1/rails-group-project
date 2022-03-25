@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark"">
   <div class="d-flex px-5 py-2 align-items-center">
     <span class="navbar-brand mb-0 h1">
       <a class="navbar-brand" href="/"> Cook Pad</a></span
@@ -19,16 +19,16 @@
 
         <li class="nav-item align-self-center">
           <%= link_to 'Sign out', destroy_user_session_path, method: :delete,
-          class:"btn btn-dark" %>
+          class:"btn btn-light" %>
         </li>
         <% else %> &nbsp;
         <li class="nav-item mr-5">
-          <%= link_to 'Sign in', new_user_session_path, class:"btn btn-dark" %>
+          <%= link_to 'Sign in', new_user_session_path, class:"btn btn-light" %>
         </li>
         &nbsp;&nbsp;&nbsp;
         <li class="nav-item">
           <%= link_to 'Sign up', new_user_registration_path, class:"btn
-          btn-outline-dark" %>
+          btn-outline-light" %>
         </li>
 
         <% end %>
