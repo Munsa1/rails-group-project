@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2022_03_24_131210) do
 
   create_table "foods", force: :cascade do |t|
     t.string "Name"
-    t.integer "measerementunit"
+    t.string "unit"
     t.decimal "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2022_03_24_131210) do
 
   create_table "users", force: :cascade do |t|
     t.string "Name", default: "", null: false
-    t.string "email"
+    t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

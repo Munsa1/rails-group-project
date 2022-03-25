@@ -1,0 +1,31 @@
+<section class='app-con'>
+  <div class='content-con'>
+  <div class='food-con'>
+    <h2>Add Food</h2>
+  </div>
+
+    <%= form_with model: @food, url: 'create' do |f| %>
+      <div class="field">
+        <%= f.label :Name %><br />
+        <%= f.text_field :Name, autocomplete: "name", placeholder: "name of food"%>
+      </div>
+
+      <div class="field">
+        <%= f.label :unit %><br />
+        <%= f.text_field :unit, autocomplete: "measuring", placeholder: "grams, milligrams, killograms, spoon, teaspoon etc"%>
+      </div>
+
+      <div class="field">
+        <%= f.label :price %><br />
+        <div class="price-field">
+          <p>$ <%= f.number_field :price, autofocus: true, autocomplete: "price", placeholder: "price in US dollars"%></p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Add Food", class:'add-button' %>
+      </div>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <% end %>
+  </div>
+</section>

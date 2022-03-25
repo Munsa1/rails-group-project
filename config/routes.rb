@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'foods/index'
+  get 'foods/show'
+  get 'foods/new'
+  get 'foods/create'
+  get 'foods/destroy'
+  get 'foods/ishow'
+  get 'foods/index'
+  get 'foods/new'
+  post 'foods/create'
+  get 'foods/destroy'
   get 'recepie_foods/new'
   get 'recepie_foods/edit'
   get 'recipes/index'
@@ -12,5 +22,8 @@ Rails.application.routes.draw do
   resources :recipes, only: %i[index show new create destroy] do
     resources :recipe_foods, only: %i[new create destroy update edit]
     resources :shopping_lists, only: %i[index]
+  end
+    resources :users, only: [:create] do
+    resources :foods, only: %i[index new create destroy]
   end
 end

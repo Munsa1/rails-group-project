@@ -1,0 +1,29 @@
+
+<section class='app-con'>
+  <div class='food-con'>
+     
+     <%= link_to "create new",'/foods/new' %> 
+    <table>
+    <% puts @foods %>
+      <tr>
+        <th>Food</th>
+        <th>Measurement unit</th>
+        <th>Unit price</th>
+        <th>Actions</th>
+      </tr>
+      <% @foods.each do |food| %>
+      <tr>
+        <td><%= food.Name %></td>
+        <td><%= food.unit %></td>
+        <td>$<%= food.price %></td>
+        <td>
+        <%# <%if can? :destroy, food%> 
+        <%# <%= button_to 'Delete', user_food_path(food.user_id, food.id), :method => :delete, class: 'delete' %> 
+        <%# <%end%> 
+        
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</section>
