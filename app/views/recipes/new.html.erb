@@ -1,2 +1,26 @@
-<h1>Recipes#new</h1>
-<p>Find me in app/views/recipes/new.html.erb</p>
+<div class="new-recipe-form">
+  <div class='food-con'>
+    <p>Wecome <%=current_user.Name%>, you can add a new recipe!</p>
+  </div>
+  <h1>New Recipe</h1>
+
+
+  <%= form_with model: @recipe, url: recipes_path do |form| %>
+<div class="comment-contain">
+	<%= form.text_field :Name, placeholder: 'Name', class: 'form-inp'%>
+  <%= form.number_field :cookingtime, placeholder: 'how many seconds to cook', class: 'form-inp', min: '0' %>
+  <%= form.number_field :preperationtime, placeholder: 'Phow many seconds to prepare', class: 'form-inp', min:'0'%>
+  <%= form.text_area :description, placeholder: 'Description', class: 'form-inp' %>
+  </div>
+
+  <div class="form-check form-switch">
+    <%= form.check_box :public, class:"form-check-input", id:"flexSwitchCheckDefault"%>
+    <label class="form-check-label" for="flexSwitchCheckDefault">Public</label>
+  </div>
+  <br>
+
+   <div class='food-con'>
+    <%= form.submit :Submit , class: "add-button" %>
+  </div>
+<% end %> 
+</div>
