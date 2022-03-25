@@ -7,7 +7,7 @@
 
 > In this project, We create a recepi App
 
-### User Stories
+### CRUD
 
  As a user:
 
