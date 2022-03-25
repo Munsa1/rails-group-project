@@ -1,26 +1,33 @@
-<div class="new-recipe-form">
-  <div class='food-con'>
-    <p>Wecome <%=current_user.Name%>, you can add a new recipe!</p>
-  </div>
-  <h1>New Recipe</h1>
+<h4>Add Recipe</h4>
 
-
-  <%= form_with model: @recipe, url: recipes_path do |form| %>
-<div class="comment-contain">
-	<%= form.text_field :Name, placeholder: 'Name', class: 'form-inp'%>
-  <%= form.number_field :cookingtime, placeholder: 'how many seconds to cook', class: 'form-inp', min: '0' %>
-  <%= form.number_field :preperationtime, placeholder: 'Phow many seconds to prepare', class: 'form-inp', min:'0'%>
-  <%= form.text_area :description, placeholder: 'Description', class: 'form-inp' %>
-  </div>
-
-  <div class="form-check form-switch">
-    <%= form.check_box :public, class:"form-check-input", id:"flexSwitchCheckDefault"%>
-    <label class="form-check-label" for="flexSwitchCheckDefault">Public</label>
-  </div>
-  <br>
-
-   <div class='food-con'>
-    <%= form.submit :Submit , class: "add-button" %>
-  </div>
-<% end %> 
+<%= form_with model: @recipe do |form| %>
+<div class="mb-3">
+  <%= form.label :name, class:'form-label' %><br />
+  <%= form.text_field :name, class:'form-control' %>
 </div>
+
+<div class="mb-3">
+    <%= form.label :preparation_time, class: "form-label" %>
+    <%= form.number_field :preperation_time, class:'form-control' %>
+  </div>
+
+<div class="mb-3">
+    <%= form.label :cooking_time, class: "form-label" %>
+    <%= form.number_field :cooking_time, class:'form-control' %>
+  </div>
+
+<div class="mb-3">
+    <%= form.label :description, "Write description", class: "form-label" %><br />
+    <%= form.text_area :description, required: true, class:'form-control'%>
+</div>
+
+<div class="mb-3">
+    <%= form.check_box :public %>
+    <%= form.label :public, class: "form-label"%>
+</div>
+
+ <div class="actions mb-5">
+    <%= form.submit "Add", class:'btn btn-dark' %>
+</div>
+
+<% end %>

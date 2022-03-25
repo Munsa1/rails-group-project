@@ -1,24 +1,25 @@
-<section class="recipe">
-  <div class='food-con'>
-    <%=link_to 'Add Recipe', new_recipe_path, class: "add-button"%><br>
-  </div>
-
-  <% @recipes.each do |recipe|%>
-  <%# <% if can? :read, recipe%>
-    <div class="recipe-div">
-      <div class="recipe-cont">
-
-        <div class="name-remove">
-         <%= link_to "#{recipe.Name}", recipe_path(recipe)%> 
-        <%# <%if can? :destroy, recipe%> 
-        <p><%= recipe.description %></p>
-        <%= button_to 'Remove', recipe_path(recipe), method: :delete, class: 'delete'%>
-        <%# <%end%>
+<div>
+  <%= link_to new_recipe_path, :class => "btn btn-dark bg-dark add mb-3" do %>
+  Add Recipe <% end %>
+  <ul class="list-group list-unstyled">
+    <% @recipes.each do |r| %>
+    <li class="border border-1 border-dark p-4 mt-3 rounded">
+      <div class="d-flex gap-4 align-items start">
+        <div>
+          <%= link_to recipe_path(r.id), id: "recipe_path#{r.id}" do %>
+          <h5><%= r.name%></h5>
+          <% end %>
+          <div>
+            <% if can? :destroy, r %> <%= button_to "Delete", recipe_path(r.id),
+            method: :delete, class: "btn btn-danger"%> <% else %> cannot delete
+            <% end %>
+          </div>
         </div>
-        
+        <div>
+          <p class="ml-5"><%= r.description%></p>
+        </div>
       </div>
-
-    </div>
-  <%# <%end%> 
-  <% end %>
-</section>
+    </li>
+    <% end %>
+  </ul>
+</div>
