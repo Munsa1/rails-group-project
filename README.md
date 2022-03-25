@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Ruby on rais blog
+# Ruby on rais recepi app
 
 
 ### About the project
