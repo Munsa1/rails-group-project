@@ -1,0 +1,25 @@
+<section class="recipe">
+  <div class='food-con'>
+    <%=link_to 'Add Recipe', new_recipe_path, class: "add-button"%>
+  </div>
+
+  <% @recipes.each do |recipe|%>
+  <%# <% if can? :read, recipe%>
+    <div class="recipe-div">
+      <div class="recipe-cont">
+
+        <div class="name-remove">
+        <%# <%= link_to "#{recipe.name}", recipe_path(recipe)%> 
+        <%# <%if can? :destroy, recipe%> 
+        <p><%= recipe.Name %></p>
+        <p><%= recipe.description %></p>
+        <%= button_to 'Remove', recipe_path(recipe), method: :delete, class: 'delete'%>
+        <%# <%end%>
+        </div>
+        
+      </div>
+
+    </div>
+  <%# <%end%> 
+  <% end %>
+</section>
