@@ -6,6 +6,8 @@
 ### About the project
 
 > In this project, We create a recepi App
+> ![recepidashboard](https://user-images.githubusercontent.com/13661892/160125151-b3ddc91f-06fa-4c6f-a680-1fd7cd2a1007.png)
+
 
 ### CRUD
 
@@ -17,7 +19,6 @@ List al recepis
 List all foods
 
 
-![recepidashboard](https://user-images.githubusercontent.com/13661892/160125151-b3ddc91f-06fa-4c6f-a680-1fd7cd2a1007.png)
 
 
 ## Built With
