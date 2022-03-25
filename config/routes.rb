@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'user/index'
+  get 'user/edit'
+  get 'user/new'
+  get 'user/show'
   get 'shopping_list/index'
   get 'foods/index'
   get 'foods/new'
