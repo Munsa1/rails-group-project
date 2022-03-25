@@ -2,6 +2,7 @@ class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
   end
+
   def show
     @recipe = Recipe.find(params[:id])
     @recipe_food = Recipe.where(recipe_id: params[:recipe_id])
@@ -30,6 +31,7 @@ class RecipesController < ApplicationController
     flash[:notice] = 'The recipe was successfully destroyed.'
     redirect_to recipes_url
   end
+
   def recipe_params
     params.require(:recipe).permit(:Name, :cookingtime, :preperationtime, :description, :public)
   end
