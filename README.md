@@ -2,6 +2,13 @@
 
 # Ruby on rais recepi app
 
+### View app in deployment
+production: https://recipeapp-production-branch.herokuapp.com/users/sign_in
+
+development: https://recipe-development-branch.herokuapp.com/users/sign_in
+
+Deployed on heroku
+
 
 ### About the project
 
